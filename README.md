@@ -1,30 +1,33 @@
  
-# Readme generator
-
+# readme gen
+----------------------
 ## Description
-    create readme file
+    create redme files
 
 ## Table of Contents
-    Installation
-    Usage
-    License
-    Contributing
-    Tests
-    Questons
+   - [Installation](#installation)
+   - Usage
+   - License
+   - Contributing
+   - Tests
+    - Questons
 
-## Installation
+## Installation <a name = "installation"/>
     To install necessary dependencies, run the following command
         nmp i
 
 ## Usgage
-  use it for readme
+  use it to make a readme
 
 ## License
   undefined
 
 ## Contributing
-  me and nmp
+  npm
 
 ## Tests
-  install stuff
+  run node
+
+## Questions
+If you have any questions, please contme at <joshwalters34@gmail.com>.  You can see more of my work at [joshwalters34](https://github.com/joshwalters34/README-Generator).
     

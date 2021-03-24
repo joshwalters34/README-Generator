@@ -11,14 +11,14 @@ const createReadme = response => `
     ${response.description}
 
 ## Table of Contents
-   - [Installation](#headers)
+   - [Installation](#installation)
    - Usage
    - License
    - Contributing
    - Tests
     - Questons
 
-## Installation <a name = "headers"/>
+## Installation <a name = "installation"/>
     To install necessary dependencies, run the following command
         nmp i
 
