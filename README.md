@@ -1,8 +1,30 @@
+ 
+# Readme generator
 
-    <h1>README Generator<h1>
+## Description
+    create readme file
 
-    <h3>Description<h3>
-    A way to create README
+## Table of Contents
+    Installation
+    Usage
+    License
+    Contributing
+    Tests
+    Questons
 
-    <h3>Table of Contents<h3>
+## Installation
+    To install necessary dependencies, run the following command
+        nmp i
+
+## Usgage
+  use it for readme
+
+## License
+  undefined
+
+## Contributing
+  me and nmp
+
+## Tests
+  install stuff
     

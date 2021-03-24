@@ -5,34 +5,34 @@ const fs = require('fs');
 // const questions = [];
 
 const createReadme = response => ` 
-${response.title}
+# ${response.title}
 
-    Description
+## Description
     ${response.description}
 
-    Table of Contents
-        Installation
-        Usage
-        License
-        Contributing
-        Tests
-        Questons
-
+## Table of Contents
     Installation
+    Usage
+    License
+    Contributing
+    Tests
+    Questons
+
+## Installation
     To install necessary dependencies, run the following command
         nmp i
 
-    Usgage
-    ${response.usage}
+## Usgage
+  ${response.usage}
 
-    License
-    ${response.license}
+## License
+  ${response.license}
 
-    Contributing
-    ${response.contributors}
+## Contributing
+  ${response.contributors}
 
-    Tests
-    ${response.test}
+## Tests
+  ${response.test}
     `
 
 // TODO: Create a function to write README file
