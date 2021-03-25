@@ -6,27 +6,28 @@ const fs = require('fs');
 
 const createReadme = response => ` 
 # ${response.title}
-----------------------
+
+![APM](https://img.shields.io/badge/licence-${response.license}-blue)
 ## Description
-    ${response.description}
+  ${response.description} 
 
 ## Table of Contents
    - [Installation](#installation)
-   - Usage
-   - License
-   - Contributing
-   - Tests
-    - Questons
+   - [Usage](#usage)
+   - [License](#license)
+   - [Contributing](#contributing)
+   - [Tests](#tests)
+   - [Questons](#questions)
 
-## Installation <a name = "installation"/>
-    To install necessary dependencies, run the following command
-        nmp i
+## Installation 
+  What command is needed to install necessary dependencies?
+    ${response.instructions}
 
-## Usgage
+## Usage
   ${response.usage}
 
 ## License
-  ${response.license}
+  The project is licensed under the ${response.license} license
 
 ## Contributing
   ${response.contributors}
@@ -35,11 +36,8 @@ const createReadme = response => `
   ${response.test}
 
 ## Questions
-If you have any questions, please contme at <joshwalters34@gmail.com>.  You can see more of my work at [joshwalters34](https://github.com/joshwalters34/README-Generator).
+If you have any questions, please contact me at <${response.email}>.  You can see more of my work at [${response.git}](https://github.com/${response.git}/README-Generator).
     `
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
 
 inquirer
   .prompt([
@@ -55,30 +53,40 @@ inquirer
     },
     {
       type: 'input',
-      message: 'What are the installation instructions for this site',
+      message: 'What are the installation instructions for this project?',
       name: 'instructions',
     },
     {
         type: 'input',
-        message: 'What is the usage information for this site?',
+        message: 'What is the usage information for this project?',
         name: 'usage'
     },
     {
         type: 'input',
-        message: 'Who are the contributors to this site?',
+        message: 'Who are the contributors to this projects?',
         name: 'contributors'
     },
     {
         type: 'input',
-        message: 'What instructions are needed to test this site?',
+        message: 'What instructions are needed to test this project?',
         name: 'test'
     },
     {
         type: 'list',
-        message: 'What type of license will be used for this stie?',
-        name: 'licence',
+        message: 'What type of license will be used for this project?',
+        name: 'license',
         choices: ['MIT', 'Mozilla', 'Apache', 'Eclipse']
-    }
+    },
+    {
+      type: 'input',
+      message: 'What is your email address?',
+      name: 'email'
+  },
+  {
+    type: 'input',
+    message: 'What is your GitHub id?',
+    name: 'git'
+},
   ])
   .then (response => {
     fs.writeFile('README.md', createReadme(response)
@@ -86,8 +94,8 @@ inquirer
     err ? console.log(err) : console.log("README generated")
     )
   })
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
