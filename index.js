@@ -4,6 +4,7 @@ const fs = require('fs');
 // TODO: Create an array of questions for user input
 // const questions = [];
 
+
 const createReadme = response => ` 
 # ${response.title}
 
@@ -15,13 +16,14 @@ const createReadme = response => `
    - [Installation](#installation)
    - [Usage](#usage)
    - [License](#license)
-   - [Contributing](#contributing)
+   - [Contributions](#contributions)
    - [Tests](#tests)
    - [Questons](#questions)
 
 ## Installation 
   What command is needed to install necessary dependencies?
-    ${response.instructions}
+
+      ${response.instructions}
 
 ## Usage
   ${response.usage}
@@ -29,22 +31,30 @@ const createReadme = response => `
 ## License
   The project is licensed under the ${response.license} license
 
-## Contributing
+## Contributions
   ${response.contributors}
 
 ## Tests
-  ${response.test}
+  In order to use this generator, users need to ${response.test}
 
 ## Questions
-If you have any questions, please contact me at <${response.email}>.  You can see more of my work at [${response.git}](https://github.com/${response.git}/README-Generator).
+If you have any questions, please contact me at <${response.email}>.  You can see more of my work at [${response.git}](https://github.com/${response.git}).
     `
 
-inquirer
+ inquirer
   .prompt([
     {
       type: 'input',
       message: 'What is the title of this README?',
       name: 'title',
+      // validate: validatePrompts,
+      // (input) {
+      //   if (input.length === 0) {
+      //     return "Please enter a title for this README";
+      //   } else {
+      //     return
+      //   }
+      // }
     },
     {
       type: 'input',
@@ -90,15 +100,32 @@ inquirer
   ])
   .then (response => {
     fs.writeFile('README.md', createReadme(response)
-    , (err) => 
+    , (err) =>
+    //  => {
+    //   if(response === null) {
+    //     console.log("Please provide an input to each prompt")
+    //   } else console.log("README generated")
+    // }
     err ? console.log(err) : console.log("README generated")
     )
   })
+
 // // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  // inquirer();
+}
 
-// Function call to initialize app
+// function validatePrompts(input) {
+//   setTimeout(function() {
+//   if (input.length === 0) {
+//     done("Please enter a title for this README");
+//     return;
+//   } 
+//   done(true);
+// }, 3000)
+// }
+// // Function call to initialize app
 init();
